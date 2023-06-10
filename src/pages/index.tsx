@@ -1,5 +1,5 @@
 import Badge from '@/components/Badge';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { Data } from './api/resume';
 
 export default function Home({ data }: { data: Data }) {
@@ -90,7 +90,7 @@ export default function Home({ data }: { data: Data }) {
   );
 }
 
-export const getStaticProps: GetStaticProps<{
+export const getServerSideProps: GetServerSideProps<{
   data: Data;
 }> = async () => {
   const res = await fetch(`${process.env.NEXT_API_URL}/api/resume`);
