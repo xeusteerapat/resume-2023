@@ -6,6 +6,7 @@ type Experience = {
   company: string;
   dates: string;
   responsibilities: string[];
+  website: string;
 };
 
 type Education = {
@@ -16,6 +17,7 @@ type Education = {
 
 type Achievement = {
   title: string;
+  link: string;
 };
 
 export type Data = {
@@ -23,7 +25,7 @@ export type Data = {
   title: string;
   skills: string[];
   experiences: Experience[];
-  education: Education;
+  educations: Education[];
   achievements: Achievement[];
 };
 
@@ -32,60 +34,107 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   res.status(200).json({
-    name: 'Your Name',
+    name: 'Teerapat Prommarak',
     title: 'Software Engineer',
     skills: [
-      'React.js',
-      'TypeScript',
-      'Tailwind CSS',
       'HTML',
       'CSS',
-      'JavaScript',
-      'Redux',
+      'Javascript',
+      'Node.js',
+      'React.js',
+      'TypeScript',
+      'MongoDB',
+      'PostgresQL',
+      'MySQL',
+      'Docker',
+      'Kubernetes (Basic)',
+      'ORM Tools (Prisma, TypeORM, Sequelize)',
       'RESTful APIs',
-      'Git',
+      'Git Version Control (GiHub, Bitbucket)',
     ],
     experiences: [
       {
-        position: 'Software Engineer',
-        company: 'XYZ Company',
-        dates: '[Dates]',
+        position: 'Software Engineer/Senior Software Engineer',
+        company: 'MOHARA',
+        website: 'https://www.mohara.co/',
+        dates: 'November 2021 - Present',
         responsibilities: [
-          'Developed responsive and user-friendly web applications using React.js, TypeScript, and Tailwind CSS.',
+          'Developed responsive and user-friendly web applications using React.js, TypeScript, and Component Toolkit such as Ant Design, Material-UI',
+          'Backend development with Node.js using popular frameworks like Express.js, Fastify and NestJS along with SQL Database and NoSQL database design',
           'Collaborated with cross-functional teams to gather requirements and implement new features.',
-          'Implemented state management using Redux, ensuring efficient data flow and application stability.',
-          'Optimized application performance through code refactoring and performance tuning techniques.',
+          'Design application architecture with popular practice such as Domain-Driven Design',
+          'Knowledge of best practices for security, testing, and deployment in backend applications',
           'Conducted code reviews and provided constructive feedback to improve code quality.',
           'Assisted in troubleshooting and resolving bugs, ensuring smooth application functionality.',
           'Actively participated in Agile development processes, including sprint planning and daily stand-ups.',
         ],
       },
       {
-        position: 'Front-End Developer',
-        company: 'ABC Solutions',
-        dates: '[Dates]',
+        position: 'Software Engineer',
+        company: 'Vonder (Thailand) Ltd,.',
+        website: 'https://www.vonder.co.th/',
+        dates: 'July 2020 - October 2021',
         responsibilities: [
-          'Built dynamic and interactive user interfaces using React.js and TypeScript.',
-          'Worked closely with design teams to implement pixel-perfect UI designs.',
-          'Collaborated with back-end developers to integrate front-end interfaces with RESTful APIs.',
-          'Implemented responsive designs using Tailwind CSS, ensuring consistent user experiences across devices.',
-          'Conducted thorough testing and debugging to identify and resolve issues promptly.',
-          'Assisted in the creation of reusable UI components to improve development efficiency.',
+          'Developed applications using Node.js and MongoDB leveraging the Serverless Framework.',
+          'Possess a deep understanding of common backend technologies, including REST APIs, databases, and microservices.',
+          'Implemented API development and integrated services with third-party APIs such as LINE Messaging API and Firebase Cloud Messaging.',
+          'Proficient in application development within cloud environments, specifically AWS (Amazon Web Services).',
+          'Collaborated with cross-functional teams such as UX/UI Design and Product Management team',
+        ],
+      },
+      {
+        position: '3D CAD Engineer',
+        company: 'Samsung Engineering (Thailand)',
+        website: 'https://www.samsungengineering.com/en/index',
+        dates: 'October 2014 - January 2020',
+        responsibilities: [
+          'Setup 3D CAD Software (SmartPlant Spoolgen) according to project requirements.',
+          'Conducted training program and guide 3D CAD users including providing problem-solving of the software.',
+          'Responsible for checking and preparation of Piping Isometric Drawings using SmartPlant Spoolgen.',
+          'Coordinating with Engineering and Construction and liaise with the Client on detailed engineering requirements.',
+        ],
+      },
+      {
+        position: 'Research Assistant',
+        company: 'Mechanical Engineering Department, Chiang Mai University',
+        website: 'https://me.eng.cmu.ac.th/',
+        dates: 'December 2012 - April 2024',
+        responsibilities: [
+          'Research and study in biomass gasification technology.',
+          'Provide knowledge about the gasification system to be used in the design of prototype.',
+          'Test the prototype and prepare data for development to a large scale including resolve the problem.',
         ],
       },
     ],
-    education: {
-      degree: 'Bachelor of Science in Computer Science',
-      university: '[University Name]',
-      graduationYear: 2023,
-    },
-    achievements: [
+    educations: [
       {
-        title:
-          '[List any relevant achievements, such as awards, honors, or recognition]',
+        degree: 'Full-stack Coding Bootcamp',
+        university: 'Thai Programmers Association',
+        graduationYear: 2020,
       },
       {
-        title: '[List any relevant certificates or courses completed]',
+        degree: 'Bachelor of Engineering (Mechanical Engineering)',
+        university: 'Chain Mai University',
+        graduationYear: 2008,
+      },
+    ],
+    achievements: [
+      {
+        title: 'Udacity: Cloud Native Application Architecture',
+        link: 'https://graduation.udacity.com/api/graduation/certificate/GA2RJKCY/download',
+      },
+      {
+        title: 'Udacity: Cloud Developer Nanodegree',
+        link: 'https://graduation.udacity.com/api/graduation/certificate/WNJSXVFM/download',
+      },
+      {
+        title:
+          'edX: Introduction to Computer Science and Programming Using Python',
+        link: 'https://courses.edx.org/certificates/6a5871267a67410b91ee34e177412746',
+      },
+      {
+        title: 'Coursera: Machine Learning',
+        link: 'https://www.coursera.org/account/accomplishments/verify/VK5WKQF6BY7D',
       },
     ],
   });
