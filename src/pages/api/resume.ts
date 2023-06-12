@@ -27,6 +27,10 @@ export type Data = {
   experiences: Experience[];
   educations: Education[];
   achievements: Achievement[];
+  contacts: {
+    type: string;
+    link: string;
+  }[];
 };
 
 export default function handler(
@@ -51,6 +55,24 @@ export default function handler(
       'ORM Tools (Prisma, TypeORM, Sequelize)',
       'RESTful APIs',
       'Git Version Control (GiHub, Bitbucket)',
+    ],
+    contacts: [
+      {
+        type: 'Email',
+        link: 'mailto:xeus085@gmail.com',
+      },
+      {
+        type: 'GitHub',
+        link: 'https://github.com/xeusteerapat',
+      },
+      {
+        type: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/teerapat-prommarak',
+      },
+      {
+        type: 'Twitter',
+        link: 'https://twitter.com/xeusteerapat',
+      },
     ],
     experiences: [
       {

@@ -3,15 +3,23 @@ import { GetServerSideProps } from 'next';
 import { Data } from './api/resume';
 
 export default function Home({ data }: { data: Data }) {
-  const { name, title, skills, experiences, educations, achievements } = data;
+  const {
+    name,
+    title,
+    skills,
+    experiences,
+    educations,
+    achievements,
+    contacts,
+  } = data;
 
   return (
     <div className='flex items-center justify-center min-h-screen bg-gray-200'>
-      <div className='w-full mx-6 overflow-hidden bg-white rounded-lg shadow-lg max-w-7xl'>
+      <div className='w-full mx-6 overflow-hidden bg-white shadow-lg max-w-7xl'>
         <div className='p-5'>
           <h1 className='text-3xl font-semibold'>{name}</h1>
           <p className='text-lg text-gray-600'>{title}</p>
-          <p className='text-gray-800'>
+          <p className='mb-2 text-gray-800'>
             Software engineer experienced in designing, developing, and
             maintaining high-quality applications. Proficient in Node.js,
             Typescript, Javascript, and modern database technology both SQL and
@@ -21,6 +29,24 @@ export default function Home({ data }: { data: Data }) {
             Platform. Eager to learn new technology and build innovative and
             cutting-edge business solutions.
           </p>
+          <h2 className='text-2xl font-semibold'>Contacts</h2>
+          <div className='mt-2'>
+            {contacts.map((contact, index) => (
+              <p key={index} className='text-gray-600'>
+                {contact.type}:{' '}
+                <a
+                  href={contact.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-blue-500 hover:underline'
+                >
+                  {contact.type === 'Email'
+                    ? contact.link.replace('mailto:', '')
+                    : contact.link}
+                </a>
+              </p>
+            ))}
+          </div>
         </div>
         <div className='p-5 bg-gray-100'>
           <h2 className='text-2xl font-semibold'>Skills</h2>
