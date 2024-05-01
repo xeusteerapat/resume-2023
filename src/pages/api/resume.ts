@@ -47,6 +47,7 @@ export default function handler(
       'Node.js',
       'React.js',
       'TypeScript',
+      'Serverless (AWS, Google Cloud)',
       'MongoDB',
       'PostgresQL',
       'MySQL',
@@ -54,7 +55,7 @@ export default function handler(
       'Kubernetes (Basic)',
       'ORM Tools (Prisma, TypeORM, Sequelize)',
       'RESTful APIs',
-      'Git Version Control (GiHub, Bitbucket)',
+      'Version Control with Git (GiHub, Bitbucket)',
     ],
     contacts: [
       {
@@ -76,10 +77,26 @@ export default function handler(
     ],
     experiences: [
       {
+        position: 'Software Engineer',
+        company: 'Krungthai-AXA PCL',
+        website: 'https://www.krungthai-axa.co.th/en',
+        dates: 'August 2023 - Present',
+        responsibilities: [
+          'Developed web/mobile applications for over 10,000 insurance agencies using React.js, TypeScript ',
+          'API development with modern languges and runtime eg. Node.js, Kotling Spring boot',
+          'Utilize Microservices architecture and deploy to Openshift',
+          'Implemented monitoring and logging solutions ensuring the reliability and stability of the microservices ecosystem.',
+          'Adopt best practices for security, testing, and deployment',
+          'Code reviews and provided constructive feedback to improve code quality.',
+          'Collaborated with cross-functional teams eg. Business/QA and Product team and participate sprint planning and daily stand-ups',
+          'Operation support, investigate & trouble shooting production issues',
+        ],
+      },
+      {
         position: 'Software Engineer/Senior Software Engineer',
         company: 'MOHARA',
         website: 'https://www.mohara.co/',
-        dates: 'November 2021 - Present',
+        dates: 'November 2021 - August 2023',
         responsibilities: [
           'Developed responsive and user-friendly web applications using React.js, TypeScript, and Component Toolkit such as Ant Design, Material-UI',
           'Backend development with Node.js using popular frameworks like Express.js, Fastify and NestJS along with SQL Database and NoSQL database design',
@@ -120,7 +137,7 @@ export default function handler(
         position: 'Research Assistant',
         company: 'Mechanical Engineering Department, Chiang Mai University',
         website: 'https://me.eng.cmu.ac.th/',
-        dates: 'December 2012 - April 2024',
+        dates: 'December 2012 - April 2014',
         responsibilities: [
           'Research and study in biomass gasification technology.',
           'Provide knowledge about the gasification system to be used in the design of prototype.',
