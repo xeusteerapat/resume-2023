@@ -57,6 +57,34 @@ export default function Home({ data }: { data: Data }) {
           </div>
         </div>
         <div className='p-5 bg-white'>
+          <h2 className='text-2xl font-semibold'>
+            Achievements and Certificates
+          </h2>
+          <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-4'>
+            {achievements.map((achievement, index) => (
+              <div key={index} className='flex items-center p-3 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow'>
+                <div className='flex-shrink-0 w-12 h-12 mr-4 flex items-center justify-center'>
+                  <img
+                    src={`/${achievement.provider === 'aws' ? 'aws_saac03_logo.png' : `${achievement.provider}_logo.${achievement.provider === 'coursera' || achievement.provider === 'udacity' ? 'svg' : 'png'}`}`}
+                    alt={`${achievement.provider} logo`}
+                    className='max-w-full max-h-full object-contain'
+                  />
+                </div>
+                <div className='flex-grow'>
+                  <a
+                    href={achievement.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-blue-600 hover:text-blue-800 font-medium hover:underline transition-colors'
+                  >
+                    {achievement.title}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className='p-5 bg-white'>
           <h2 className='text-2xl font-semibold'>Work Experience</h2>
           {experiences.map((experience, index) => (
             <div key={index} className='mt-4'>
@@ -90,26 +118,6 @@ export default function Home({ data }: { data: Data }) {
               <p className='text-gray-600'>{edu.graduationYear}</p>
             </div>
           ))}
-        </div>
-
-        <div className='p-5 bg-white'>
-          <h2 className='text-2xl font-semibold'>
-            Achievements and Certificates
-          </h2>
-          <ul className='mt-4'>
-            {achievements.map((achievement, index) => (
-              <li key={index}>
-                <a
-                  href={achievement.link}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-blue-500 hover:underline'
-                >
-                  {achievement.title}
-                </a>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </div>
