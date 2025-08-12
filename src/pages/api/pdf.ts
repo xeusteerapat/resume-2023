@@ -9,11 +9,28 @@ export default async function handler(
 		return res.status(405).json({ message: 'Method not allowed' });
 	}
 
+	let browser;
 	try {
-		const browser = await puppeteer.launch({
-			headless: true,
-		});
+		const isVercel = !!process.env.VERCEL_ENV;
+		let puppeteer: any,
+			launchOptions: any = {
+				headless: true,
+			};
 
+		if (isVercel) {
+			const chromium = (await import('@sparticuz/chromium')).default;
+			puppeteer = await import('puppeteer-core');
+
+			launchOptions = {
+				...launchOptions,
+				args: chromium.args,
+				executablePath: await chromium.executablePath(),
+			};
+		} else {
+			puppeteer = await import('puppeteer');
+		}
+
+		browser = await puppeteer.launch(launchOptions);
 		const page = await browser.newPage();
 
 		const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
