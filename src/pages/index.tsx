@@ -13,9 +13,25 @@ export default function Home({ data }: { data: Data }) {
     contacts,
   } = data;
 
+  const handleDownloadPDF = () => {
+    window.open('/api/pdf', '_blank');
+  };
+
   return (
     <div className='flex items-center justify-center min-h-screen bg-gray-200'>
       <div className='w-full mx-6 overflow-hidden bg-white shadow-lg max-w-7xl'>
+        {/* PDF Download Button */}
+        <div className='p-5 bg-blue-50 border-b border-blue-200'>
+          <button
+            onClick={handleDownloadPDF}
+            className='inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-sm'
+          >
+            <svg className='w-4 h-4 mr-2' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
+            </svg>
+            Download PDF Resume
+          </button>
+        </div>
         <div className='p-5'>
           <h1 className='text-3xl font-semibold'>{name}</h1>
           <p className='text-lg text-gray-600'>{title}</p>
